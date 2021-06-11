@@ -38,7 +38,9 @@ app.get("/q", (req, res) => {
   //Generates UUID
   let uniqueID = crypto.randomBytes(8).toString("hex");
   pdfConvert(url, uniqueID).then(() => {
-    res.send(uniqueID);
+    res.send({
+      UUID: uniqueID,
+    });
   });
 });
 
