@@ -10,6 +10,10 @@ app.use(cors());
 
 let url;
 
+app.get("/", (req, res) => {
+  res.send("hi");
+});
+
 //GET request to download route with send pdf id
 //to download user specific pdf
 app.get("/download/:id", (req, res) => {
