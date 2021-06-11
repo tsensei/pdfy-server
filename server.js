@@ -35,6 +35,7 @@ app.get("/download/:id", (req, res) => {
 
 app.get("/q", (req, res) => {
   url = req.query.url;
+  res.send(`got ${url}`);
   //Generates UUID
   let uniqueID = crypto.randomBytes(8).toString("hex");
   pdfConvert(url, uniqueID).then(() => {
